@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('coyote-reboot', function () {
+//     return view('products.index');
+// });
+
+// Route::get('coyote-reboot/anvil', function () {
+//     return view('products.index');
+// });
+
+
+Route::resource('coyote-reboot', 'Product');
