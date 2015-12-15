@@ -7,7 +7,8 @@
 
 
   function setProductLine($code) {
-    return Product::where('code', $code)->first();
+    $product = Product::where('code', $code)->first();
+    return ($product) ? $product : Product::where('code', 'anvil')->first();
   }
 
   function setTheme($product) {

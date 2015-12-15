@@ -20,7 +20,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    ACME - {{$productLine}}
+    ACME - <?= $productLine ?>
 @stop
 
 
@@ -39,9 +39,9 @@
         <div class="--header <?= $headerClass ?>">
           <?= $headline; ?>
 
-          <? if ($layout !== 'centered'): ?>
+          @if ($layout !== 'centered')
             @include('partials/promo')
-          <? endif; ?>
+          @endif
 
           <!-- MODAL -->
           @include('partials/modal')
@@ -53,13 +53,13 @@
         <?php $cutoutClass = ($layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7'; ?>
 
         <div class="<?= $cutoutClass ?>">
-          <? if ($layout == 'centered'): ?>
+          @if ($layout == 'centered')
             <div class="promo">
               <a href="#promo" data-toggle="modal" alt="promo">
                 <img class="promo__image" src="../assets/images/play.png">
               </a>
             </div>
-          <? endif; ?>
+          @endif
 
           @include('partials/cutout')
         </div>
@@ -78,23 +78,23 @@
           <h3>Available at these Fine Retailers</h3>
 
           <div class="row vendor">
-            <?php if (! empty($vendors)) : ?>
-                <? foreach ($vendors as $name => $link): ?>
+            @if (! empty($vendors))
+                @foreach ($vendors as $name => $link)
                     @include('partials/retailers')
-                <? endforeach; ?>
+                @endforeach
 
-                <? if ($layout == 'centered' && count($vendors) % 2 != 0 ): ?>
+                @if ($layout == 'centered' && count($vendors) % 2 != 0 )
                     <div class="vendor__link -cursor-auto">
                         <div class='btn -cursor-auto'>
                           <div class='--circle-spacer'></div>
                           <div class='vendor__name'></div>
                         </div>
                     </div>
-                <? endif; ?>
+                @endif
 
-            <?php else : ?>
+            @else
               <h3>Check back soon!</h3>
-            <? endif; ?>
+            @endif
           </div>
         </div>
       </div>
