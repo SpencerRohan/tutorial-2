@@ -17,13 +17,9 @@ class Products extends Controller
     public function index($code = 'anvil')
     {
         $product = Product::where('code', $code)->first();
-
-        return view('products.index', ['product' => $product]);
+        $theme = $product->theme[0];
+        return view('products.index', compact('product', 'theme'));
 
     }
 
 }
-// $data->name
-// if $data->layout == 'centered'
-// $name
-
