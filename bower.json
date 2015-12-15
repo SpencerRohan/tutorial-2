@@ -1,0 +1,22 @@
+{
+  "name": "training",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Spencer Rohan <spencermrohan@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/SpencerRohan/tutorial",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

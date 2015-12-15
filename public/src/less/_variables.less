@@ -1,0 +1,88 @@
+@theme-hex: #981b1e;
+@theme-color: red;
+@black:  #000000;
+@gray-light: #bbbbbb;
+@hover: @theme-color;
+  @color-background: @gray-light;
+  @color-content:    @black;
+  @color-vendor:     @theme-hex;
+
+@theme-headline: @ralewayextrabold;
+@theme-sm-headline: @ralewayextrabold;
+@theme-body: @raleway;
+  @font-content: @theme-body;
+  @font-heading: @theme-headline;
+  @font-sm-heading: @theme-sm-headline;
+  @font-logo: @anchorjack;
+
+@background: "../images/background-default.png";
+  @image-background: url(@background) center;
+
+@circle: 999px;
+
+// Media queries
+@xs-min: ~'min-width:@{screen-xs-min}';
+@xs-max: ~'max-width:@{screen-xs-max}'; //assumes xs only
+@sm-max: ~'max-width:@{screen-sm-max}'; //assumes xs, sm
+@md-max: ~'max-width:@{screen-md-max}'; //assumes xs, sm, md
+@sm-min: ~'min-width:@{screen-sm}';     //assumes sm, md, lg
+@md-min: ~'min-width:@{screen-md}';     //assumes md, lg
+@lg-min: ~'min-width:@{screen-lg}';     //assumes lg only
+
+//bootstrap begin
+
+//== Scaffolding
+
+
+//** Background color for `<body>`.
+@body-bg:               @gray-light;
+//** Global text color on `<body>`.
+@text-color:            @gray;
+
+//** Global textual link color.
+@link-color:            @gray;
+//** Link hover color set via `darken()` function.
+@link-hover-color:      @hover;
+//** Link hover decoration.
+@link-hover-decoration: none;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-base:        @font-content;
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.05)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+//** By default, this inherits from the `<body>`.
+@headings-font-family:    @font-heading;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+@headings-color:          @black;
+
+
+
+//== Buttons
+
+@btn-default-border:             @hover;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @hover;
+@btn-primary-border:             @hover;
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
+
+//bootsrap end
