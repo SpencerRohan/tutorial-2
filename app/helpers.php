@@ -3,6 +3,7 @@
   namespace App\Http\Controllers;
 
   use App\Product;
+  use App\Theme;
 
 
   function setProductLine($code) {
@@ -10,6 +11,6 @@
   }
 
   function setTheme($product) {
-    return $product->theme[0];
+    return Theme::where('product_id', $product->id)->first();
   }
 ?>

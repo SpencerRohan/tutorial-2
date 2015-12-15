@@ -1,23 +1,23 @@
-@extends('layouts.layout')
 
 <?php
     $productLine = $product->name;
     $layout = $product->layout;
     $headline = $product->headline;
     $content = $product->content;
-    $theme = $product->theme[0];
     $code = $product->code;
 
 
-  $vendors = [ "Venture" => "'#'",
+    $vendors = [ "Venture" => "'#'",
                 "Zayre" => "'#'",
                 "Woolworth" => "'#'",
                 "Marshall Field's" => "'#'",
                 "Bamberger's" => "'#'" ];
 
-  $companyName = "ACME";
-  $couponPrice = "$6.00 OFF!";
+    $companyName = "ACME";
+    $couponPrice = "$6.00 OFF!";
 ?>
+
+@extends('layouts.layout')
 
 @section('title')
     ACME - {{$productLine}}
@@ -40,11 +40,11 @@
           <?= $headline; ?>
 
           <? if ($layout !== 'centered'): ?>
-            <?php include 'partials/promo.php' ?>
+            @include('partials/promo')
           <? endif; ?>
 
           <!-- MODAL -->
-          <?php include 'partials/modal.php' ?>
+          @include('partials/modal')
         </div>
 
 
@@ -61,7 +61,7 @@
             </div>
           <? endif; ?>
 
-          <?php include 'partials/cutout.php' ?>
+          @include('partials/cutout')
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@
           <div class="row vendor">
             <?php if (! empty($vendors)) : ?>
                 <? foreach ($vendors as $name => $link): ?>
-                    <?php include 'partials/retailers.php'; ?>
+                    @include('partials/retailers')
                 <? endforeach; ?>
 
                 <? if ($layout == 'centered' && count($vendors) % 2 != 0 ): ?>

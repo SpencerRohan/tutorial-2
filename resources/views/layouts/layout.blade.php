@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="../assets/css/site.css">
     <style>
-      <? include 'partials/style.php'; ?>
+      @include('partials/style')
     </style>
 
 

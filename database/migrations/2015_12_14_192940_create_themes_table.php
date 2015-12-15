@@ -20,7 +20,7 @@ class CreateThemesTable extends Migration
             $table->string('hex', 32);
             $table->string('color', 32);
             $table->string('headline', 32);
-            $table->string('sm-headline', 32);
+            $table->string('smHeadline', 32);
             $table->string('body', 32);
             $table->timestamps();
         });
