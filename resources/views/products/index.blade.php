@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">{{$code}}</div>
+                <div class="title">{{$product->content}}</div>
             </div>
         </div>
     </body>

@@ -11,13 +11,13 @@
 |
 */
 
-// Route::get('coyote-reboot', function () {
-//     return view('products.index');
-// });
-
+// Route::get('/', [
+//     'as' => 'coyote-reboot', 'uses' => 'Product@index'
+// ]);
+Route::get('coyote-reboot/{code?}', "Products@index");
 // Route::get('coyote-reboot/anvil', function () {
 //     return view('products.index');
 // });
 
 
-Route::resource('coyote-reboot', 'Product');
+// Route::resource('coyote-reboot', 'Product');
