@@ -5,7 +5,7 @@
     </h1>
 
     <h4>
-      <?= "on ".$companyName." ".$name; ?>
+      <?= "on ".$companyName." ".$productLine; ?>
     </h4>
   </div>
 

@@ -1,6 +1,7 @@
+@extends('layouts.layout')
 
 <?php
-    $name = $product->name;
+    $productLine = $product->name;
     $layout = $product->layout;
     $headline = $product->headline;
     $content = $product->content;
@@ -18,11 +19,8 @@
   $couponPrice = "$6.00 OFF!";
 ?>
 
-
-@extends('layouts.layout')
-
 @section('title')
-    ACME - {{$name}}
+    ACME - {{$productLine}}
 @stop
 
 

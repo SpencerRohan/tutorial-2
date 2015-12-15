@@ -16,8 +16,8 @@ class Products extends Controller
      */
     public function index($code = 'anvil')
     {
-        $product = Product::where('code', $code)->first();
-        $theme = $product->theme[0];
+        $product = setProductLine($code);
+        $theme = setTheme($product);
         return view('products.index', compact('product', 'theme'));
 
     }
