@@ -7,7 +7,7 @@
 
 @section('body')
     <div class="logo">
-      <img class="logo__image" src="../assets/images/block_title.png" >
+      <img class="logo__image" src="{{{ asset('assets/images/block_title.png') }}}" >
     </div>
 
     <!-- START SPOTLIGHT -->
@@ -29,7 +29,7 @@
           @if ($product->layout == 'centered')
             <div class="promo">
               <a href="#promo" data-toggle="modal" alt="promo">
-                <img class="promo__image" src="../assets/images/play.png">
+                <img class="promo__image" src="{{{ asset('assets/images/play.png') }}}">
               </a>
             </div>
           @endif
