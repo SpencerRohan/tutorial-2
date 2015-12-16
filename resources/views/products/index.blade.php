@@ -6,13 +6,6 @@
     $content = $product->content;
     $code = $product->code;
 
-
-    $vendors = [ "Venture" => "'#'",
-                "Zayre" => "'#'",
-                "Woolworth" => "'#'",
-                "Marshall Field's" => "'#'",
-                "Bamberger's" => "'#'" ];
-
     $companyName = "ACME";
     $couponPrice = "$6.00 OFF!";
 ?>
@@ -20,7 +13,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    ACME - <?= $productLine ?>
+    ACME - {{ $product->name }}
 @stop
 
 
@@ -34,12 +27,12 @@
     <div class="container spotlight -background">
       <div class ="row spotlight__row">
 
-        <?php $headerClass = ($layout == 'centered') ? 'col-md-12 --centered' : 'col-md-7 col-md-push-4'; ?>
+        <?php $headerClass = ($product->layout == 'centered') ? 'col-md-12 --centered' : 'col-md-7 col-md-push-4'; ?>
 
         <div class="--header <?= $headerClass ?>">
-          <?= $headline; ?>
+         {!! $headline; !!}
 
-          @if ($layout !== 'centered')
+          @if ($product->layout !== 'centered')
             @include('partials/promo')
           @endif
 
@@ -50,10 +43,10 @@
 
 
 
-        <?php $cutoutClass = ($layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7'; ?>
+        <?php $cutoutClass = ($product->layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7'; ?>
 
         <div class="<?= $cutoutClass ?>">
-          @if ($layout == 'centered')
+          @if ($product->layout == 'centered')
             <div class="promo">
               <a href="#promo" data-toggle="modal" alt="promo">
                 <img class="promo__image" src="../assets/images/play.png">
@@ -71,7 +64,7 @@
       <div class ="row article__row">
 
         <div class="col-md-6 col-sm-12 col-md-push-6 --card -divider-bottom --copy --copy-pad">
-          <?= $content; ?>
+          {!! $content !!}
         </div>
 
         <div class="col-md-6 col-sm-12 col-md-pull-6 --card -divider-right">
@@ -79,11 +72,11 @@
 
           <div class="row vendor">
             @if (! empty($vendors))
-                @foreach ($vendors as $name => $link)
+                @foreach ($vendors as $vendor)
                     @include('partials/retailers')
                 @endforeach
 
-                @if ($layout == 'centered' && count($vendors) % 2 != 0 )
+                @if ($product->layout == 'centered' && count($vendors) % 2 != 0 )
                     <div class="vendor__link -cursor-auto">
                         <div class='btn -cursor-auto'>
                           <div class='--circle-spacer'></div>

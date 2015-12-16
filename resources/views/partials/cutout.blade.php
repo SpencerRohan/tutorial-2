@@ -1,11 +1,11 @@
 <div class="cutout --centered">
   <div class="cutout__details --centered">
     <h1 class="cutout__headline">
-      <?= $couponPrice ? $couponPrice : "SEE DETAILS" ?>
+      {{ $couponPrice ? $couponPrice : "SEE DETAILS" }}
     </h1>
 
     <h4>
-      <?= "on ".$companyName." ".$productLine; ?>
+      on {{ $companyName }} {{ $product->line }}
     </h4>
   </div>
 

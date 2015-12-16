@@ -3,7 +3,7 @@
 .btn-primary:focus,
 .layout-centered .btn-primary:focus,
 .vendor .--circle {
-  background-color: <?= $theme->hex ?>;
+  background-color: {{ $theme->hex }};
   outline: none;
 }
 
@@ -12,7 +12,7 @@
 .layout-centered .--circle:hover,
 .layout-centered .vendor .--circle-big:hover,
 .layout-centered .promo .promo__image:hover {
-  background-color: <?= $theme->color; ?>;
+  background-color: {{ $theme->color }};
   outline: none;
 }
 
@@ -20,26 +20,26 @@
 .vendor .--circle,
 .layout-centered .vendor .--circle-big,
 .layout-centered .promo .promo__image {
-  background-color: <?= $theme->hex; ?>;
+  background-color: {{ $theme->hex }};
   outline: none;
 }
 
 a:active, a:hover {
-  color: <?= $theme->hex; ?>;
+  color: {{ $theme->hex }};
 }
 
 h1 {
-  font-family: <?= $theme->headline; ?>;
+  font-family: {{ $theme->headline }};
 }
 
 h3 {
-  font-family: <?= $theme->smHeadline; ?>;
+  font-family: {{ $theme->smHeadline }};
 }
 
 body {
-  font-family: <?= $theme->body; ?>;
+  font-family: {{ $theme->body }};
 }
 
 .-background {
-  background: url(<?= '../assets/images/background-'.$layout.'.png' ?>) center;
+  background: url('../assets/images/background-{{ $product->layout }}.png') center;
 }
