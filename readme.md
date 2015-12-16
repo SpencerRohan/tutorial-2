@@ -18,6 +18,8 @@
 ```
 + Why didn't $product->theme() work?
 + Using helper files - when/where/why?
++ Namespace - /acme, /lib, /products, /themes
++ testing in PHP - any resources? Similar to ruby or js?
 
 
 
