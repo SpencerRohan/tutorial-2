@@ -3,6 +3,9 @@
 
 #### Phase 1
 
+Ran into a few snags when it came to database relationships - still not sure I set that up right. I really liked how blade works, would be interested in learning more. Not sure if it's because it's a foreign framework or if it's how Laravel is built - but it feels a little akward in some points. Building databases and models seem a bit more effort than rails. I could use some tips/lookover on my models, controllers, and migrations. I also couldn't get any function calls to work when going into the view - easier to explain in person.  Maybe I'm missing something?
+
+
 ##### Questions and Topics:
 
 + Naming variables in the view - more details.
@@ -16,11 +19,14 @@
 
   @var $variable = 'value';
 ```
-+ Why didn't $product->theme() work?
++ Why doesn't $product->theme work? - relational database connections
 + Using helper files - when/where/why?
 + Namespace - /acme, /lib, /products, /themes
++ Timestamps issue
 + testing in PHP - any resources? Similar to ruby or js?
++ What programs should I use to code with? Sublime, Atom - any other suggestions?
 
+Confident in coding scale 1-10, Phase 1 was about a 6-7. There is still a ton I'm not aware of, but the basic foundation and building blocks are very similar to Rails. Like Rails, Laravel has so much going on and customizable options, I feel it'll take me a bit to really master it. I do feel comfortable in doing the basic operations.
 
 
 

@@ -13,15 +13,15 @@ class VendorsTableSeeder extends Seeder
     {
         DB::table('vendors')->insert([
           ['name' => "Venture",
-          'link' => "'#'"],
+          'link' => "#"],
           ['name' => "Zayre",
-          'link' => "'#'"],
+          'link' => "#"],
           ['name' => "Woolworth",
-          'link' => "'#'"],
+          'link' => "#"],
           ['name' => "Marshall Field's",
-          'link' => "'#'"],
+          'link' => "#"],
           ['name' => "Bamberger's",
-          'link' => "'#'"]
+          'link' => "#"]
         ]);
     }
 }

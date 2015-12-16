@@ -10,7 +10,7 @@ class Theme extends Model
 
     public function products()
     {
-      return $this->hasMany('App\Product', 'id', 'product_id');
+      return $this->hasMany('App\Product');
     }
 
 
