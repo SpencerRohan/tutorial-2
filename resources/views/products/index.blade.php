@@ -1,21 +1,8 @@
-
-<?php
-    $productLine = $product->name;
-    $layout = $product->layout;
-    $headline = $product->headline;
-    $content = $product->content;
-    $code = $product->code;
-
-    $companyName = "ACME";
-    $couponPrice = "$6.00 OFF!";
-?>
-
 @extends('layouts.layout')
 
 @section('title')
     ACME - {{ $product->name }}
 @stop
-
 
 
 @section('body')
@@ -27,25 +14,18 @@
     <div class="container spotlight -background">
       <div class ="row spotlight__row">
 
-        <?php $headerClass = ($product->layout == 'centered') ? 'col-md-12 --centered' : 'col-md-7 col-md-push-4'; ?>
-
-        <div class="--header <?= $headerClass ?>">
-         {!! $headline; !!}
+        <div class="--header {{ ($product->layout == 'centered') ? 'col-md-12 --centered' : 'col-md-7 col-md-push-4' }}">
+         {!! $product->headline !!}
 
           @if ($product->layout !== 'centered')
-            @include('partials/promo')
+            @include('products/_promo')
           @endif
 
           <!-- MODAL -->
-          @include('partials/modal')
+          @include('products/_modal')
         </div>
 
-
-
-
-        <?php $cutoutClass = ($product->layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7'; ?>
-
-        <div class="<?= $cutoutClass ?>">
+        <div class="{{ ($product->layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7' }}">
           @if ($product->layout == 'centered')
             <div class="promo">
               <a href="#promo" data-toggle="modal" alt="promo">
@@ -54,7 +34,7 @@
             </div>
           @endif
 
-          @include('partials/cutout')
+          @include('products/_cutout')
         </div>
       </div>
     </div>
@@ -64,7 +44,7 @@
       <div class ="row article__row">
 
         <div class="col-md-6 col-sm-12 col-md-push-6 --card -divider-bottom --copy --copy-pad">
-          {!! $content !!}
+          {!! $product->content !!}
         </div>
 
         <div class="col-md-6 col-sm-12 col-md-pull-6 --card -divider-right">
@@ -73,7 +53,7 @@
           <div class="row vendor">
             @if (! empty($vendors))
                 @foreach ($vendors as $vendor)
-                    @include('partials/retailers')
+                    @include('products/_retailers')
                 @endforeach
 
                 @if ($product->layout == 'centered' && count($vendors) % 2 != 0 )

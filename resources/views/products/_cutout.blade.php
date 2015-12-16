@@ -1,11 +1,11 @@
 <div class="cutout --centered">
   <div class="cutout__details --centered">
     <h1 class="cutout__headline">
-      {{ $couponPrice ? $couponPrice : "SEE DETAILS" }}
+      $6.00 OFF!
     </h1>
 
     <h4>
-      on {{ $companyName }} {{ $product->line }}
+      on ACME {{ $product->name }}
     </h4>
   </div>
 

@@ -7,15 +7,11 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/site.css">
-    <style>
-      @include('partials/style')
-    </style>
-
-
+    <style>@include('layouts/_style')</style>
   </head>
 
-  <body class="<?= 'layout-'.$layout ?>">
-      @yield('body')
+  <body class="layout-{{ $product->layout }}">
+    @yield('body')
 
     <footer>
       <div class="container">
@@ -26,7 +22,6 @@
     </footer>
 
     <script src="../assets/js/site.js" type="text/javascript"></script>
-
   </body>
 </html>
 
