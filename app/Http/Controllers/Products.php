@@ -22,7 +22,6 @@ class Products extends Controller
         $theme = setTheme($product);
         $vendors = setVendors();
         return view('products.index', compact('product', 'theme', 'vendors'));
-
     }
 
 }
