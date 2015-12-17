@@ -13,9 +13,12 @@ class Product extends Model
     }
 
     public function setProductLine($code) {
-      // $product = $this->where('code', $code)->first();
       $product = $this->whereCode($code)->first();
       return ($product) ? $product : $this->find(1);
+    }
+
+    public function scopeCode($query, $code='anvil') {
+      $query->whereCode($type)->first();
     }
 
 // Product::where('name', 'Charline')->byCode('anvil')->first();
