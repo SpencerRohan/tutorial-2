@@ -19,7 +19,6 @@ Ran into a few snags when it came to database relationships - still not sure I s
 
   @var $variable = 'value';
 ```
-+ Why doesn't $product->theme work? - relational database connections
 + Using helper files - when/where/why?
 + Namespace - /acme, /lib, /products, /themes
 + Timestamps issue

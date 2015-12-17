@@ -11,5 +11,5 @@
 |
 */
 
-
+Route::get('/', "Products@index");
 Route::get('coyote-reboot/{code?}', "Products@index");
