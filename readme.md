@@ -8,8 +8,8 @@ Ran into a few snags when it came to database relationships - still not sure I s
 
 ##### Questions and Topics:
 
-+ Naming variables in the view - more details.
-+ Why did I have to 'composer update' and 'composer dump-autoload' when migrating:
++ Naming variables in the view - more details. - Answered
++ Why did I have to 'composer update' and 'composer dump-autoload' when migrating - Answered(partially)
 + var_dump - uses?
 + Extending blade - where could I put something like:
 ```php
@@ -19,10 +19,15 @@ Ran into a few snags when it came to database relationships - still not sure I s
 
   @var $variable = 'value';
 ```
-+ Using helper files - when/where/why?
++ Using helper files - when/where/why? - ANSWERED
 + Namespace - /acme, /lib, /products, /themes
 + Timestamps issue
 + testing in PHP - any resources? Similar to ruby or js?
++ $product = Product::setProductLine($code); is still giving me an error of:
+```
+Non-static method App\Product::setProductLine() should not be called statically, assuming $this from incompatible context
+
+```
 + What programs should I use to code with? Sublime, Atom - any other suggestions?
 
 [CheatSheet](http://cheats.jesse-obrien.ca/)

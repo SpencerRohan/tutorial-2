@@ -13,8 +13,23 @@ class Product extends Model
     }
 
     public function setProductLine($code) {
-      $product = Product::where('code', $code)->first();
-      return ($product) ? $product : Product::find(1);
+      // $product = $this->where('code', $code)->first();
+      $product = $this->whereCode($code)->first();
+      return ($product) ? $product : $this->find(1);
     }
+
+// Product::where('name', 'Charline')->byCode('anvil')->first();
+
+// Product::lastMonth()
+
+//     public function scopeByCode($query, $type='anvil')
+//     {
+//       $query->whereCode($type);
+//     }
+
+//     public function scopeLastMonth($query)
+//     {
+//       $query->where('created_at', 'start of last month')->whereCreatedAt('<', 'end of last month')
+//     }
 
 }
