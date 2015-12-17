@@ -12,4 +12,9 @@ class Product extends Model
       return $this->belongsTo('App\Theme');
     }
 
+    public function setProductLine($code) {
+      $product = Product::where('code', $code)->first();
+      return ($product) ? $product : Product::find(1);
+    }
+
 }

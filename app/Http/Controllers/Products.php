@@ -19,7 +19,7 @@ class Products extends Controller
     public function index($code = 'anvil')
     {
         $product = setProductLine($code);
-        $theme = setTheme($product);
+        $theme = $product->theme;
         $vendors = setVendors();
         return view('products.index', compact('product', 'theme', 'vendors'));
     }

@@ -12,13 +12,10 @@
     return ($product) ? $product : Product::find(1);
   }
 
-  function setTheme($product) {
-    return Theme::where('product_id', $product->id)->first();
-  }
-
   function setVendors() {
     return Vendor::all();
   }
+
 
 
 ?>
