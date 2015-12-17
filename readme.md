@@ -25,6 +25,8 @@ Ran into a few snags when it came to database relationships - still not sure I s
 + testing in PHP - any resources? Similar to ruby or js?
 + What programs should I use to code with? Sublime, Atom - any other suggestions?
 
+[CheatSheet](http://cheats.jesse-obrien.ca/)
+
 Confident in coding scale 1-10, Phase 1 was about a 6-7. There is still a ton I'm not aware of, but the basic foundation and building blocks are very similar to Rails. Like Rails, Laravel has so much going on and customizable options, I feel it'll take me a bit to really master it. I do feel comfortable in doing the basic operations.
 
 
