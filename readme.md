@@ -28,7 +28,8 @@ Ran into a few snags when it came to database relationships - still not sure I s
 Non-static method App\Product::setProductLine() should not be called statically, assuming $this from incompatible context
 
 ```
-+ What programs should I use to code with? Sublime, Atom - any other suggestions?
++ What programs should I use to code with? Sublime, Atom - any other suggestions? - Answered
++ Abstract vs Inheritance - differences outside of not being able to make an instance? Abstract vs Interface - uses? I get the main concepts, would love to see practical applications.
 
 [CheatSheet](http://cheats.jesse-obrien.ca/)
 
