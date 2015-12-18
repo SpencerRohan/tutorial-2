@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class ThemesTableSeeder extends Seeder
 {
@@ -11,24 +12,36 @@ class ThemesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('themes')->insert([
-          ['hex' => '#981b1e',
+        DB::table('themes')->insert([  
+          [
+          'hex' => '#981b1e',
           'color' => 'red',
           'headline' => 'ralewayextrabold',
           'smHeadline' => 'ralewaybold',
-          'body' => 'raleway'],
+          'body' => 'raleway',
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
 
-          ['hex' => '#00bff3',
+          [
+          'hex' => '#00bff3',
           'color' => 'violet',
           'headline' => 'oswald-heavy',
           'smHeadline' => 'oswald-bold',
-          'body' => 'helvetica'],
+          'body' => 'helvetica',
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
 
-          ['hex' => '#DCA65A',
+          [
+          'hex' => '#DCA65A',
           'color' => 'deepskyblue',
           'headline' => 'roboto_slab--bold',
           'smHeadline' => 'roboto_slab',
-          'body' => 'helvetica'],
+          'body' => 'helvetica',
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
         ]);
     }
 }

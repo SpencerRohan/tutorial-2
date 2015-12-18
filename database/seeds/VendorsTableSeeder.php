@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class VendorsTableSeeder extends Seeder
 {
@@ -12,16 +13,40 @@ class VendorsTableSeeder extends Seeder
     public function run()
     {
         DB::table('vendors')->insert([
-          ['name' => "Venture",
-          'link' => "#"],
-          ['name' => "Zayre",
-          'link' => "#"],
-          ['name' => "Woolworth",
-          'link' => "#"],
-          ['name' => "Marshall Field's",
-          'link' => "#"],
-          ['name' => "Bamberger's",
-          'link' => "#"]
+          [
+          'name' => "Venture",
+          'link' => "#",
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
+
+          [
+          'name' => "Zayre",
+          'link' => "#",
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
+
+          [
+          'name' => "Woolworth",
+          'link' => "#",
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
+
+          [
+          'name' => "Marshall Field's",
+          'link' => "#",
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
+
+          [
+          'name' => "Bamberger's",
+          'link' => "#",
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
         ]);
     }
 }

@@ -18,8 +18,8 @@ class Products extends Controller
      */
     public function index($code = 'anvil')
     {
-        // $product = Product::setProductLine($code);
-        $product = setProductLine($code);
+        $product = Product::with('theme')->whereCode($code)->first();
+        // $product = setProductLine($code);
         $theme   = $product->theme;
         $vendors = setVendors();
         return view('products.index', compact('product', 'theme', 'vendors'));

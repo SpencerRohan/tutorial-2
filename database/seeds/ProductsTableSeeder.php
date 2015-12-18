@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -11,28 +12,42 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
+
+
         DB::table('products')->insert([
 
-          ['code' => 'anvil',
+          [
+          'code' => 'anvil',
           'name' => 'Anvil',
           'layout' => 'default',
           'headline' => "<h1 class='-headline'>Stop Accelerate Incredibilus in his tracks.</h1><p>Crush pesky roadrunners with ease.</p>",
           'content' => "<h3>ACME Product Line-up</h3><p>Anvil Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>",
-          'theme_id' => 1],
+          'theme_id' => 1,
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
 
-          ['code' => 'glue',
+          [
+          'code' => 'glue',
           'name' => 'Glue',
           'layout' => 'centered',
           'headline' => "<h1 class='-headline'>Stop Accelerate Incredibilus in his tracks.</h1><p>Crush pesky roadrunners with ease.</p>",
           'content' => "<h3>ACME Product Line-up</h3><p>Glue Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>",
-          'theme_id' => 2],
+          'theme_id' => 2,
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
 
-          ['code' => 'jet_propelled_unicycle',
+          [
+          'code' => 'jet_propelled_unicycle',
           'name' => 'Jet Propelled Unicycle',
           'layout' => 'centered',
           'headline' => "<h1 class='-headline'>Stop Accelerate Incredibilus in his tracks.</h1><p>Crush pesky roadrunners with ease.</p>",
           'content' => "<h3>ACME Product Line-up</h3><p>Jet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>",
-          'theme_id' => 3]
+          'theme_id' => 3,
+          'created_at' => Carbon::now(),
+          'updated_at' => null,
+          ],
         ]);
     }
 }
