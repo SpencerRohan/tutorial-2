@@ -1,23 +1,26 @@
-<!-- resources/views/auth/login.blade.php -->
+@extends('layouts.auth')
 
-<form method="POST" action="/auth/login">
-    {!! csrf_field() !!}
+@section('title')
+    LOGIN
+@stop
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+@section('form')
+    <form method="POST" action="/auth/login">
+        {!! csrf_field() !!}
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
-
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
-    </div>
-
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="remember">Remember Me
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+@stop
