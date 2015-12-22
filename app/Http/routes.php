@@ -13,7 +13,7 @@
 
 Route::get('/', "Products@index");
 Route::get('coyote-reboot/{code?}', "Products@index");
-Route::get('backend', "Dashboard@index");
+Route::get('backend', "Dashboards@index");
 
 
 // Authentication routes...

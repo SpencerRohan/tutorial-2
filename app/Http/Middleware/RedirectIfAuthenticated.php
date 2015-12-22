@@ -35,11 +35,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            if ($this->auth->user()->is_admin) {
-                return $next($request);
-            }
-            return redirect('/');
-            
+            return redirect('/backend');
         }
 
         return $next($request);

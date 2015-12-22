@@ -24,15 +24,6 @@
       <label for="password">Confirm Password</label>
       <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
     </div>
-    @if (Auth::check())
-      @if (Auth::user()->is_admin)
-        <div class="radio">
-            <label>
-              <input type="radio" name="is_admin" value="1" >Admin Status
-            </label>
-        </div>
-      @endif
-    @endif
     <button type="submit" class="btn btn-primary">REGISTER</button>
   </form>
 @stop
