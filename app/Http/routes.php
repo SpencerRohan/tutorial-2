@@ -13,9 +13,6 @@
 
 Route::get('/', "Products@index");
 Route::get('coyote-reboot/{code?}', "Products@index");
-Route::get('home', function(){
-	return Redirect::to('/');
-});
 
 
 // Authentication routes...
@@ -31,3 +28,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('home', function(){
+	return Redirect::to('/');
+});

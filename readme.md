@@ -25,7 +25,9 @@ Ran into a few snags when it came to database relationships - still not sure I s
 + testing in PHP - any resources? Similar to ruby or js?
 + $product = Product::setProductLine($code); is still giving me an error of:
 ```
-Non-static method App\Product::setProductLine() should not be called statically, assuming $this from incompatible context
+Non-static method App\Product::setProductLine() 
+should not be called statically, assuming $this 
+from incompatible context
 
 ```
 + What programs should I use to code with? Sublime, Atom - any other suggestions? - Answered

@@ -22,22 +22,21 @@
     </div>
     
     <div class= 'container article'>
-        <div class ="row article__row">
-         
-            @if (count($errors))
-              <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{!! $error !!}</li>
-                    @endforeach
-                </ul>
-              </div>
-            @endif
+      <div class ="row article__row">
+       
+        @if (count($errors))
+          <div class="alert alert-danger">
+            <ul>
+              @foreach($errors->all() as $error)
+                <li>{!! $error !!}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
 
-            @yield('form')
-
-
-        </div>
+        @yield('form')
+        
+      </div>
     </div>
 
     <footer>
