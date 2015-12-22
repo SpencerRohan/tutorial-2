@@ -13,16 +13,17 @@
 
 Route::get('/', "Products@index");
 Route::get('coyote-reboot/{code?}', "Products@index");
+Route::get('backend', "Dashboard@index");
 
 
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('backend/login', 'Auth\AuthController@getLogin');
+Route::post('backend/login', 'Auth\AuthController@postLogin');
+Route::get('backend/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('backend/register', 'Auth\AuthController@getRegister');
+Route::post('backend/register', 'Auth\AuthController@postRegister');
 
 
 Route::controllers([
@@ -30,5 +31,5 @@ Route::controllers([
 ]);
 
 Route::get('home', function(){
-	return Redirect::to('/');
+	return Redirect::to('backend');
 });
