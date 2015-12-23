@@ -1,75 +1,34 @@
-@extends('layouts.layout')
+@extends('layouts.dashboard')
 
 @section('title')
-    ACME - {{ $product->name }}
+    PRODUCTS ADMIN
 @stop
 
-
-@section('body')
-    <div class="logo">
-      <img class="logo__image" src="{{{ asset('assets/images/block_title.png') }}}" >
-    </div>
-
-    <!-- START SPOTLIGHT -->
-    <div class="container spotlight -background">
-      <div class ="row spotlight__row">
-
-        <div class="--header {{ ($product->layout == 'centered') ? 'col-md-12 --centered' : 'col-md-7 col-md-push-4' }}">
-         {!! $product->headline !!}
-
-          @if ($product->layout !== 'centered')
-            @include('products/_promo')
-          @endif
-
-          <!-- MODAL -->
-          @include('products/_modal')
-        </div>
-
-        <div class="{{ ($product->layout == 'centered') ? 'col-xs-12 --centered' : 'col-md-4 col-md-pull-7' }}">
-          @if ($product->layout == 'centered')
-            <div class="promo">
-              <a href="#promo" data-toggle="modal" alt="promo">
-                <img class="promo__image" src="{{{ asset('assets/images/play.png') }}}">
-              </a>
-            </div>
-          @endif
-
-          @include('products/_cutout')
-        </div>
-      </div>
-    </div>
-
-    <!-- START ARTICLE -->
-    <div class="container article">
-      <div class ="row article__row">
-
-        <div class="col-md-6 col-sm-12 col-md-push-6 --card -divider-bottom --copy --copy-pad">
-          {!! $product->content !!}
-        </div>
-
-        <div class="col-md-6 col-sm-12 col-md-pull-6 --card -divider-right">
-          <h3>Available at these Fine Retailers</h3>
-
-          <div class="row vendor">
-            @if (! empty($vendors))
-                @foreach ($vendors as $vendor)
-                    @include('products/_retailers')
-                @endforeach
-
-                @if ($product->layout == 'centered' && count($vendors) % 2 != 0 )
-                    <div class="vendor__link -cursor-auto">
-                        <div class='btn -cursor-auto'>
-                          <div class='--circle-spacer'></div>
-                          <div class='vendor__name'></div>
-                        </div>
-                    </div>
-                @endif
-
-            @else
-              <h3>Check back soon!</h3>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
+@section('dash_content')
+  <div class='col-sm-12'>
+    <h4>Products <span class="badge">{{ count($products) }}</span></h4>
+    <hr>       
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Layout</th>
+          <th>Theme ID</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach ($products as $product)
+        <tr>
+          <td><a href="products/{{ $product->id }}">{{ $product->id }}</a></td>
+          <td>{{ $product->name }}</td>
+          <td>{{ $product->code }}</td>
+          <td>{{ $product->layout }}</td>
+          <td><a href="themes/{{ $product->theme->id }}">{{ $product->theme->id }}</a></td>
+        </tr>
+      @endforeach
+      </tbody>
+    </table>
+  </div>
 @stop

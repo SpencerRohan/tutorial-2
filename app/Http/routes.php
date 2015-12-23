@@ -11,9 +11,22 @@
 |
 */
 
-Route::get('/', "Products@index");
-Route::get('coyote-reboot/{code?}', "Products@index");
+Route::get('/', "Productlines@index");
+Route::get('coyote-reboot/{code?}', "Productlines@index");
+
+// Dashboard Admin
 Route::get('backend', "Dashboards@index");
+
+
+// Products Admin
+Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
+    Route::resource('products' , 'Products' );
+});
+
+// Themes Admin
+Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
+    Route::resource('themes' , 'Themes' );
+});
 
 
 // Authentication routes...

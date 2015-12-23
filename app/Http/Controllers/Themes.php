@@ -9,8 +9,7 @@ use App\Theme;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-
-class Products extends Controller
+class Themes extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +18,8 @@ class Products extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('products.index', compact('products'));
+        $themes = Theme::all();
+        return view('themes.index', compact('themes'));
     }
 
     /**
@@ -30,7 +29,7 @@ class Products extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        //
     }
 
     /**
@@ -41,10 +40,7 @@ class Products extends Controller
      */
     public function store(Request $request)
     {
-        $product=Request::all();
-        Product::create($product);
-        $id = $product->id;
-        return redirect('products.show', compact('id'));
+        //
     }
 
     /**
@@ -55,9 +51,7 @@ class Products extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
-        return view('products.show', compact('product'));
-
+        //
     }
 
     /**
@@ -68,14 +62,7 @@ class Products extends Controller
      */
     public function edit($id)
     {
-        
-        $product = Product::findOrFail($id);
-        $themes = Theme::all();
-        $themeIds = [];
-        foreach ($themes as $theme):
-            $themeIds[$theme->id] = $theme->id;
-        endforeach;
-        return view('products.edit', compact('product', 'themeIds'));
+        //
     }
 
     /**
@@ -87,10 +74,7 @@ class Products extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productUpdate = $request->all();
-        $product = Product::find($id);
-        $product->update($productUpdate);
-        return redirect()->route('backend.products.show', compact('id'));
+        //
     }
 
     /**
@@ -101,8 +85,6 @@ class Products extends Controller
      */
     public function destroy($id)
     {
-        Product::findOrFail($id)->delete();
-        return redirect('products.index');
+        //
     }
-
 }

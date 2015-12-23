@@ -21,18 +21,12 @@ class Product extends Model
       $query->whereCode($type)->first();
     }
 
-// Product::where('name', 'Charline')->byCode('anvil')->first();
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'code', 'layout', 'theme_id', "headline", 'content'];
 
-// Product::lastMonth()
-
-//     public function scopeByCode($query, $type='anvil')
-//     {
-//       $query->whereCode($type);
-//     }
-
-//     public function scopeLastMonth($query)
-//     {
-//       $query->where('created_at', 'start of last month')->whereCreatedAt('<', 'end of last month')
-//     }
 
 }
