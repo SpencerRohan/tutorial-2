@@ -66,6 +66,7 @@ class Users extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+        return redirect()->route('backend.users.index');
     }
 }
