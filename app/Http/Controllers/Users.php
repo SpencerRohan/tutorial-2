@@ -23,29 +23,6 @@ class Users extends Controller
         return view('users.index', compact('users'));
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -55,7 +32,10 @@ class Users extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userUpdate = $request->all();
+        $user = User::find($id);
+        $user->update($userUpdate);
+        return redirect()->route('backend.users.index', compact('id'));
     }
 
     /**

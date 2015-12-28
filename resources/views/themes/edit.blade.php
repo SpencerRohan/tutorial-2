@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-lo
+
 @section('title')
     THEME ADMIN
 @stop

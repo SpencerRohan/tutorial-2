@@ -38,7 +38,6 @@ Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\Ad
 
     // Dashboard Users
     Route::get('/users', ['as' => 'backend.users.index', 'uses' => 'Users@index']);
-    Route::get('/users/{users}/edit', ['as' => 'backend.users.edit', 'uses' => 'Users@edit']);
     Route::put('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
     Route::patch('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
     Route::delete('/users/{users}', ['as' => 'backend.users.destroy', 'uses' => 'Users@destroy']);
