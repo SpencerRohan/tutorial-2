@@ -14,13 +14,31 @@
 Route::get('/', "Productlines@index");
 Route::get('coyote-reboot/{code?}', "Productlines@index");
 
-// Dashboard Admin
-Route::get('backend', "Dashboards@index");
+Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\AdminMiddleware', 'before' => 'csrf'), function(){
 
-// Themes Admin
+    // Dashboard Products
+    Route::get('/products', ['as' => 'backend.products.index', 'uses' => 'Products@index']);
+    Route::get('/products/create', ['as' => 'backend.products.create', 'uses' => 'Products@create']);
+    Route::post('/products', ['as' => 'backend.products.store', 'uses' => 'Products@store']);
+    Route::get('/products/{products}', ['as' => 'backend.products.show', 'uses' => 'Products@show']);
+    Route::get('/products/{products}/edit', ['as' => 'backend.products.edit', 'uses' => 'Products@edit']);
+    Route::put('/products/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
+    Route::patch('/products/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
+    Route::delete('/products/{products}', ['as' => 'backend.products.destroy', 'uses' => 'Products@destroy']);
+
+    // Dashboard Themes
+    Route::get('/themes', ['as' => 'backend.themes.index', 'uses' => 'Themes@index']);
+    Route::get('/themes/create', ['as' => 'backend.themes.create', 'uses' => 'Themes@create']);
+    Route::post('/themes', ['as' => 'backend.themes.store', 'uses' => 'Themes@store']);
+    Route::get('/themes/{themes}', ['as' => 'backend.themes.show', 'uses' => 'Themes@show']);
+    Route::get('/themes/{themes}/edit', ['as' => 'backend.themes.edit', 'uses' => 'Themes@edit']);
+    Route::put('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
+    Route::patch('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
+    Route::delete('/themes/{themes}', ['as' => 'backend.themes.destroy', 'uses' => 'Themes@destroy']);
+});
+
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
-    Route::resource('products' , 'Products');
-    Route::resource('themes' , 'Themes' );
+	Route::get('/', "Dashboards@index");
 
 	// Authentication routes...
 	Route::get('login', ['as' => 'backend.login', 'uses' => 'Auth\AuthController@getLogin']);

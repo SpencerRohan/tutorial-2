@@ -36,6 +36,8 @@
 
         <div class= 'container spotlight article'>
           <div class ="row spotlight__row article__row">
+
+            @if (Auth::user()->is_admin)
               
               @yield('dash_content')
 
@@ -45,6 +47,10 @@
                 <a href="/backend/products"><button class="btn btn-primary btn-brand">PRODUCTS</button></a>
                 <a href="/backend/themes"><button class="btn btn-primary btn-brand">THEMES</button></a>
               </div>
+            @else
+              <p> You are not an authorized Administrator of this site </p>
+            @endif
+
           </div>
         </div>
 

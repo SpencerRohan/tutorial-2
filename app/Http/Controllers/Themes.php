@@ -92,12 +92,7 @@ class Themes extends Controller
      */
     public function destroy($id)
     {
-        $theme = Theme::findOrFail($id);
-        // $products = $theme->products;
-        // foreach ($products as $product) {
-        //     $product->update(['theme_id' => null]);
-        // };
-        $theme->delete();
+        Theme::findOrFail($id)->delete();
         return redirect()->route('backend.themes.index');
     }
 }

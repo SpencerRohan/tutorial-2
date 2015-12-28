@@ -25,7 +25,11 @@
           <td>{{ $product->name }}</td>
           <td>{{ $product->code }}</td>
           <td>{{ $product->layout }}</td>
-          <td><a href="themes/{{ $product->theme->id }}">{{ $product->theme->id }}</a></td>
+          <td>
+          @if ($product->theme_id != null)
+            <a href="themes/{{ $product->theme_id }}">{{ $product->theme_id }}</a>
+          @endif
+          </td>
         </tr>
       @endforeach
       </tbody>

@@ -24,7 +24,7 @@
         </li>
         <h6>Theme ID: </h6>
         <li class="list-group-item">
-          <a href="/backend/themes/{{$product->theme->id}}">{{ $product->theme->id }}</a>
+          <a href="/backend/themes/{{$product->theme_id}}">{{ $product->theme_id }}</a>
         </li>
     </ul>
   </div>

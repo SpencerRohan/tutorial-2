@@ -14,9 +14,9 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('theme_id')->unsigned();
+            $table->integer('theme_id')->unsigned()->nullable();
             $table->foreign('theme_id')
-                  ->references('id')->on('themes')->onDelete('cascade');
+                  ->references('id')->on('themes')->onDelete('set null');
             $table->string('code', 36)->unique();
             $table->string('name', 36);
             $table->string('layout', 36);
