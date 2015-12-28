@@ -39,10 +39,10 @@ class AdminMiddleware
                 if ($request->ajax()) {
                     return response('Unauthorized.', 401);
                 } else {
-                    return redirect()->guest('/backend');
+                   return $next($request);
                 }
             }
-            return $next($request);
+            return redirect()->guest('/backend');
         } else {
             return redirect()->guest('backend/login');
         }
