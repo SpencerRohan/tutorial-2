@@ -66,7 +66,8 @@ class Themes extends Controller
      */
     public function edit($id)
     {
-        //
+        $theme = Theme::findOrFail($id);
+        return view('themes.edit', compact('theme'));
     }
 
     /**
@@ -78,7 +79,10 @@ class Themes extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $themetUpdate = $request->all();
+        $theme = Theme::find($id);
+        $theme->update($themetUpdate);
+        return redirect()->route('backend.themes.show', compact('id'));
     }
 
     /**
@@ -89,6 +93,7 @@ class Themes extends Controller
      */
     public function destroy($id)
     {
-        //
+        Theme::findOrFail($id)->delete();
+        return redirect()->route('backend.themes.index');
     }
 }

@@ -20,7 +20,7 @@ class Dashboards extends Controller
     public function index()
     {
         $users = User::all();
-        $admins = User::whereIsAdmin(true);
+        $admins = User::where('is_admin', '1')->get();
         $themes = Theme::all();
         $products = Product::all();
         return view('dashboards.index', compact('users', 'admins', 'themes', 'products'));
