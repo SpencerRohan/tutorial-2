@@ -29,7 +29,8 @@ class Themes extends Controller
      */
     public function create()
     {
-        //
+
+        return view('themes.create');
     }
 
     /**
@@ -40,7 +41,9 @@ class Themes extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $theme = Theme::create($request->all());
+        $id = $theme->id;
+        return redirect()->route('backend.themes.show', compact('id'));
     }
 
     /**
@@ -51,7 +54,8 @@ class Themes extends Controller
      */
     public function show($id)
     {
-        //
+        $theme = Theme::findOrFail($id);
+        return view('themes.show', compact('theme'));
     }
 
     /**

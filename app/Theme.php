@@ -13,4 +13,11 @@ class Theme extends Model
       return $this->hasMany('App\Product');
     }
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['hex', 'color', 'headline', 'smHeadline', 'body'];
+
 }
