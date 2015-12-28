@@ -20,7 +20,7 @@ Route::get('backend', "Dashboards@index");
 
 // Products Admin
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
-    Route::resource('products' , 'Products' );
+    Route::resource('products' , 'Products');
 });
 
 // Themes Admin

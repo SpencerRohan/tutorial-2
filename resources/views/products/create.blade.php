@@ -6,8 +6,7 @@
 
 @section('dash_content')
 
-
-    {!! Form::model($product,['method' => 'PATCH','route'=>['backend.products.update',$product->id]]) !!}
+    {!! Form::open(['url' => 'backend/products']) !!}
         
         <div class="col-sm-4">
             <div class="form-group">
@@ -20,33 +19,33 @@
             </div>
             <div class="form-group">
                 <h6>{!! Form::label('Layout', 'Default Layout:') !!}</h6>
-                {!! Form::radio('layout', 'default', $product->layout == 'default', ['class'=>'form-control']) !!}
+                {!! Form::radio('layout', 'default', true, ['class'=>'form-control']) !!}
 
             </div>
             <div class="form-group">
                 <h6>{!! Form::label('Layout', 'Centered Layout:') !!}</h6>
-                {!! Form::radio('layout', 'centered',  $product->layout == 'centered', ['class'=>'form-control']) !!}
+                {!! Form::radio('layout', 'centered', false,  ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 <h6>{!! Form::label('Theme ID', 'Theme ID:') !!}</h6>
-                {!! Form::select('theme_id', $themeIds , $product->theme_id, ['class'=>'form-control']) !!}
+                {!! Form::select('theme_id', $themeIds, ['class'=>'form-control']) !!}
             </div>
         </div>
 
         <div class="col-sm-4">
             <div class="form-group">
                 <h6>{!! Form::label('Headline', 'Headline:') !!}</h6>
-                {!! Form::textarea('headline',null,['class'=>'form-control']) !!}
+                {!! Form::textarea('headline',"<h1 class='-headline'>HEADLINE HERE</h1><p>TAGLINE HERE</p>",['class'=>'form-control']) !!}
             </div>
         </div>
 
         <div class="col-sm-4">
             <div class="form-group">
                 <h6>{!! Form::label('Content', 'Content:') !!}</h6>
-                {!! Form::textarea('content',null,['class'=>'form-control']) !!}
+                {!! Form::textarea('content',"<h3>HEADLINE HERE</h3><p>CONTENT HERE</p>",['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::submit('UPDATE', ['class' => 'btn btn-success']) !!}
+                {!! Form::submit('SAVE', ['class' => 'btn btn-success form-control']) !!}
             </div>
         </div>
 

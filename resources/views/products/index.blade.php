@@ -30,5 +30,6 @@
       @endforeach
       </tbody>
     </table>
+    <a href="/backend/products/create"><button class="btn btn-success">+ New Product</button></a>
   </div>
 @stop

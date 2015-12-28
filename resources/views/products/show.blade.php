@@ -14,7 +14,7 @@
         <li class="list-group-item">
           {{ $product->name }}
         </li>
-        <h6>Code:</h6>
+        <h6>Code/URL:</h6>
         <li class="list-group-item">
           {{ $product->code }}
         </li>

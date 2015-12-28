@@ -30,7 +30,12 @@ class Products extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $themes = Theme::all();
+        $themeIds = [];
+        foreach ($themes as $theme):
+            $themeIds[$theme->id] = $theme->id;
+        endforeach;
+        return view('products.create', compact('themeIds'));
     }
 
     /**
@@ -41,10 +46,9 @@ class Products extends Controller
      */
     public function store(Request $request)
     {
-        $product=Request::all();
-        Product::create($product);
+        $product = Product::create($request->all());
         $id = $product->id;
-        return redirect('products.show', compact('id'));
+        return redirect()->route('backend.products.show', compact('id'));
     }
 
     /**
@@ -102,7 +106,7 @@ class Products extends Controller
     public function destroy($id)
     {
         Product::findOrFail($id)->delete();
-        return redirect('products.index');
+        return redirect()->route('backend.products.index');
     }
 
 }

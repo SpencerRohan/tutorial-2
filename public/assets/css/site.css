@@ -6872,6 +6872,9 @@ h4 {
 .vendor .vendor__name {
   padding: 10px 0;
 }
+input[type=radio] {
+  height: 20px;
+}
 footer {
   margin-top: 10px;
   text-transform: lowercase;
