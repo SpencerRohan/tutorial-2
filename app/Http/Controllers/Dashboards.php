@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Theme;
 use App\Product;
+use Auth;
 
 class Dashboards extends Controller
 {
@@ -19,11 +20,15 @@ class Dashboards extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $admins = User::where('is_admin', '1')->get();
-        $themes = Theme::all();
-        $products = Product::all();
-        return view('dashboards.index', compact('users', 'admins', 'themes', 'products'));
+        if (Auth::check()){
+            $users = User::all();
+            $admins = User::where('is_admin', '1')->get();
+            $themes = Theme::all();
+            $products = Product::all();
+            return view('dashboards.index', compact('users', 'admins', 'themes', 'products'));
+        };
+        return redirect()->route('backend.login')->withErrors(['You must be logged in to access Dashboard']);
+
     }
 
 

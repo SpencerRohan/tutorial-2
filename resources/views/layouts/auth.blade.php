@@ -35,7 +35,7 @@
         @endif
 
         @yield('form')
-        
+
       </div>
     </div>
 

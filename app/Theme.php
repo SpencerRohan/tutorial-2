@@ -18,6 +18,6 @@ class Theme extends Model
      *
      * @var array
      */
-    protected $fillable = ['hex', 'color', 'headline', 'smHeadline', 'body'];
+    protected $fillable = ['hex', 'color', 'headline', 'smHeadline', 'body',];
 
 }

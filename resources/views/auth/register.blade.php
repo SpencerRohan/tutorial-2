@@ -24,6 +24,12 @@
       <label for="password">Confirm Password</label>
       <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
     </div>
-    <button type="submit" class="btn btn-primary">REGISTER</button>
+    <button type="submit" class="btn btn-success">REGISTER</button>
   </form>
+
+  <div class='col-sm-12'>
+    <hr>
+    <p>Already a member?</p>
+    <a href="/backend/login"><button class="btn btn-primary btn-brand">Login</button></a>
+  </div>
 @stop

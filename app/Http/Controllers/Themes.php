@@ -8,7 +8,6 @@ use App\Product;
 use App\Theme;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 class Themes extends Controller
 {
     /**
@@ -93,7 +92,12 @@ class Themes extends Controller
      */
     public function destroy($id)
     {
-        Theme::findOrFail($id)->delete();
+        $theme = Theme::findOrFail($id);
+        // $products = $theme->products;
+        // foreach ($products as $product) {
+        //     $product->update(['theme_id' => null]);
+        // };
+        $theme->delete();
         return redirect()->route('backend.themes.index');
     }
 }

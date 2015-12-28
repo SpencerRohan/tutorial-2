@@ -17,27 +17,20 @@ Route::get('coyote-reboot/{code?}', "Productlines@index");
 // Dashboard Admin
 Route::get('backend', "Dashboards@index");
 
-
-// Products Admin
-Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
-    Route::resource('products' , 'Products');
-});
-
 // Themes Admin
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
+    Route::resource('products' , 'Products');
     Route::resource('themes' , 'Themes' );
+
+	// Authentication routes...
+	Route::get('login', ['as' => 'backend.login', 'uses' => 'Auth\AuthController@getLogin']);
+	Route::post('login', ['as' => 'backend.login', 'uses' => 'Auth\AuthController@postLogin']);
+	Route::get('logout', ['as' => 'backend.logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+	// Registration routes...
+	Route::get('register', ['as' => 'backend.register', 'uses' => 'Auth\AuthController@getRegister']);
+	Route::post('register', ['as' => 'backend.register', 'uses' => 'Auth\AuthController@postRegister']);
 });
-
-
-// Authentication routes...
-Route::get('backend/login', 'Auth\AuthController@getLogin');
-Route::post('backend/login', 'Auth\AuthController@postLogin');
-Route::get('backend/logout', 'Auth\AuthController@getLogout');
-
-// Registration routes...
-Route::get('backend/register', 'Auth\AuthController@getRegister');
-Route::post('backend/register', 'Auth\AuthController@postRegister');
-
 
 Route::controllers([
    'password' => 'Auth\PasswordController',
