@@ -35,6 +35,13 @@ Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\Ad
     Route::put('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
     Route::patch('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
     Route::delete('/themes/{themes}', ['as' => 'backend.themes.destroy', 'uses' => 'Themes@destroy']);
+
+    // Dashboard Users
+    Route::get('/users', ['as' => 'backend.users.index', 'uses' => 'Users@index']);
+    Route::get('/users/{users}/edit', ['as' => 'backend.users.edit', 'uses' => 'Users@edit']);
+    Route::put('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
+    Route::patch('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
+    Route::delete('/users/{users}', ['as' => 'backend.users.destroy', 'uses' => 'Users@destroy']);
 });
 
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
