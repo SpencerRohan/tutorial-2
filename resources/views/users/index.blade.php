@@ -6,7 +6,7 @@
 
 @section('dash_content')
   <div class='col-sm-12'>
-    <h4>Users <span class="badge">{{ count($users) }}</span></h4>
+    <h4>Users <span class="badge">{{ $count }}</span></h4>
     <hr>       
     <table class="table table-condensed table-hover">
       <thead>
