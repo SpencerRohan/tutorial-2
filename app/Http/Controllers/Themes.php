@@ -17,7 +17,7 @@ class Themes extends Controller
      */
     public function index()
     {
-        $themes = Theme::all();
+        $themes = Theme::paginate(10);
         return view('themes.index', compact('themes'));
     }
 

@@ -34,6 +34,9 @@
       @endforeach
       </tbody>
     </table>
-    <a href="/backend/products/create"><button class="btn btn-success">+ New Product</button></a>
+    <div class='col-sm-12'>
+      {!! $products->render() !!}<hr>
+      <a href="/backend/products/create"><button class="btn btn-success">+ New Product</button></a>
+    </div>
   </div>
 @stop

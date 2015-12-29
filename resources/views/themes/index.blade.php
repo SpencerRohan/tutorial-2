@@ -38,6 +38,9 @@
       @endforeach
       </tbody>
     </table>
-    <a href="/backend/themes/create"><button class="btn btn-success">+ New Theme</button></a>
+    <div class='col-sm-12'>
+      {!! $themes->render() !!}<hr>
+      <a href="/backend/themes/create"><button class="btn btn-success">+ New Theme</button></a>
+    </div>
   </div>
 @stop

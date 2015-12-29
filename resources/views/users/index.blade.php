@@ -53,5 +53,9 @@
       @endforeach
       </tbody>
     </table>
+    <div class='col-sm-12'>
+      {!! $users->render() !!}<hr>
+      <a href="/backend/users/create"><button class="btn btn-success">+ New User</button></a>
+    </div>
   </div>
 @stop
