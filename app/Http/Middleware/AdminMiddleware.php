@@ -32,20 +32,15 @@ class AdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
+
+
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check()) {
-            if ($this->auth->user()->is_admin) {
-                if ($request->ajax()) {
-                    return response('Unauthorized.', 401);
-                } else {
-                   return $next($request);
-                }
-            }
-            return redirect()->guest('/backend');
-        } else {
-            return redirect()->guest('backend/login');
+        if($this->auth->check() && $this->auth->user->is_admin) {
+            return $next($request);
         }
-
+        
+        return redirect()->guest('backend/login');
     }
+
 }
