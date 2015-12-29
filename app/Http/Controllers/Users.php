@@ -9,9 +9,14 @@ use App\Theme;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateUserRequest;
 
 class Users extends Controller
 {
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -40,10 +45,15 @@ class Users extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
-        User::create($request->all());
-        return redirect()->route('backend.users');
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'is_admin' => $request['is_admin'],
+            'password' => bcrypt($request['password']),
+        ]);
+        return redirect()->route('backend.users.index');
     }
 
     /**

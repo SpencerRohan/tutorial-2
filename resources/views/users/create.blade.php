@@ -5,7 +5,7 @@
 @stop
 
 @section('dash_content')
-  {!! Form::open(['route'=>['backend.users.index']]) !!}
+  {!! Form::open(['route'=>['backend.users.store']]) !!}
      {!! csrf_field() !!}
 
       <div class="col-sm-4">
