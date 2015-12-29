@@ -24,7 +24,7 @@
         </li>
         <h6>Theme ID: </h6>
         <li class="list-group-item">
-          <a href="/backend/themes/{{$product->theme_id}}">{{ $product->theme_id }}</a>
+          <a href="{{ route('backend.products.edit', [$product->id]) }}">{{ $product->theme_id }}</a>
         </li>
     </ul>
   </div>
@@ -53,7 +53,7 @@
     </ul>
     
     <a href="/coyote-reboot/{{ $product->code }}"><button class="btn btn-info">View Product</button></a>
-    <a href="/backend/products/{{ $product->id }}/edit"><button class="btn btn-success">EDIT</button></a>
+    <a href="{{ route('backend.products.edit', [$product->id]) }}"><button class="btn btn-success">EDIT</button></a>
     {!! Form::open(['method' => 'DELETE', 'route'=>['backend.products.destroy', $product->id]]) !!}
       <br>{!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}

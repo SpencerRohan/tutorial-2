@@ -20,14 +20,13 @@
       </thead>
       <tbody>
       @foreach ($products as $product)
-        <tr>
-          <td><a href="products/{{ $product->id }}">{{ $product->id }}</a></td>
+        <tr>{{ route('backend.products.edit', [$product->id]) }}">{{ $product->id }}</a></td>
           <td>{{ $product->name }}</td>
           <td>{{ $product->code }}</td>
           <td>{{ $product->layout }}</td>
           <td>
           @if ($product->theme_id != null)
-            <a href="themes/{{ $product->theme_id }}">{{ $product->theme_id }}</a>
+            <a href="{{ route('backend.themes.show', [$product->theme_id]) }}">{{ $product->theme_id }}</a>
           @endif
           </td>
         </tr>
@@ -36,7 +35,7 @@
     </table>
     <div class='col-sm-12'>
       {!! $products->render() !!}<hr>
-      <a href="/backend/products/create"><button class="btn btn-success">+ New Product</button></a>
+      <a href="{{ route('backend.products.create') }}"><button class="btn btn-success">+ New Product</button></a>
     </div>
   </div>
 @stop

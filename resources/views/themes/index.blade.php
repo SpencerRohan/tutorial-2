@@ -23,7 +23,7 @@
       <tbody>
       @foreach ($themes as $theme)
         <tr>
-          <td><a href="themes/{{ $theme->id }}">{{ $theme->id }}</a></td>
+          <td><a href="{{ route('backend.themes.show', [$product->theme_id]) }}">{{ $theme->id }}</a></td>
           <td>{{ $theme->hex }}</td>
           <td>{{ $theme->color }}</td>
           <td>{{ $theme->headline }}</td>
@@ -31,7 +31,7 @@
           <td>{{ $theme->body }}</td>
           <td>
             @foreach ($theme->products as $product)
-              <a href="products/{{ $product->id }}">{{ $product->id }}</a><br>
+              <a href="{{ route('backend.products.show', [$product->id]) }}">{{ $product->id }}</a><br>
             @endforeach
           </td>
         </tr>
@@ -40,7 +40,7 @@
     </table>
     <div class='col-sm-12'>
       {!! $themes->render() !!}<hr>
-      <a href="/backend/themes/create"><button class="btn btn-success">+ New Theme</button></a>
+      <a href="{{ route('backend.themes.create') }}"><button class="btn btn-success">+ New Theme</button></a>
     </div>
   </div>
 @stop

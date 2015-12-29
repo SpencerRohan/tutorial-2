@@ -26,7 +26,7 @@
         @endif
         @foreach ($theme->products as $product)
           <li class="list-group-item">
-            <a href="/backend/products/{{$product->id}}">{{ $product->id }}</a>
+            <a href="{{ route('backend.products.show', [$product->id]) }}">{{ $product->id }}</a>
           </li>
         @endforeach     
     </ul>
@@ -59,7 +59,7 @@
         </li>
     </ul>
     
-    <a href="/backend/themes/{{ $theme->id }}/edit"><button class="btn btn-success">EDIT</button></a>
+    <a href="{{ route('backend.themes.edit', [$theme->id]) }}"><button class="btn btn-success">EDIT</button></a>
     {!! Form::open(['method' => 'DELETE', 'route'=>['backend.themes.destroy', $theme->id]]) !!}
       <br>{!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
