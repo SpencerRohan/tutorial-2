@@ -17,30 +17,36 @@ Route::get('coyote-reboot/{code?}', "Productlines@index");
 Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\AdminMiddleware', 'before' => 'csrf'), function(){
 
     // Dashboard Products
-    Route::get('/products', ['as' => 'backend.products.index', 'uses' => 'Products@index']);
-    Route::get('/products/create', ['as' => 'backend.products.create', 'uses' => 'Products@create']);
-    Route::post('/products', ['as' => 'backend.products.store', 'uses' => 'Products@store']);
-    Route::get('/products/{products}', ['as' => 'backend.products.show', 'uses' => 'Products@show']);
-    Route::get('/products/{products}/edit', ['as' => 'backend.products.edit', 'uses' => 'Products@edit']);
-    Route::put('/products/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
-    Route::patch('/products/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
-    Route::delete('/products/{products}', ['as' => 'backend.products.destroy', 'uses' => 'Products@destroy']);
+    Route::group(['prefix' => 'products'], function($router) {
+        Route::get('/', ['as' => 'backend.products.index', 'uses' => 'Products@index']);
+        Route::get('/create', ['as' => 'backend.products.create', 'uses' => 'Products@create']);
+        Route::post('', ['as' => 'backend.products.store', 'uses' => 'Products@store']);
+        Route::get('/{products}', ['as' => 'backend.products.show', 'uses' => 'Products@show']);
+        Route::get('/{products}/edit', ['as' => 'backend.products.edit', 'uses' => 'Products@edit']);
+        Route::put('/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
+        Route::patch('/{products}', ['as' => 'backend.products.update', 'uses' => 'Products@update']);
+        Route::delete('/{products}', ['as' => 'backend.products.destroy', 'uses' => 'Products@destroy']);
+    });
 
     // Dashboard Themes
-    Route::get('/themes', ['as' => 'backend.themes.index', 'uses' => 'Themes@index']);
-    Route::get('/themes/create', ['as' => 'backend.themes.create', 'uses' => 'Themes@create']);
-    Route::post('/themes', ['as' => 'backend.themes.store', 'uses' => 'Themes@store']);
-    Route::get('/themes/{themes}', ['as' => 'backend.themes.show', 'uses' => 'Themes@show']);
-    Route::get('/themes/{themes}/edit', ['as' => 'backend.themes.edit', 'uses' => 'Themes@edit']);
-    Route::put('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
-    Route::patch('/themes/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
-    Route::delete('/themes/{themes}', ['as' => 'backend.themes.destroy', 'uses' => 'Themes@destroy']);
+    Route::group(['prefix' => 'products'], function($router) {
+        Route::get('/', ['as' => 'backend.themes.index', 'uses' => 'Themes@index']);
+        Route::get('/create', ['as' => 'backend.themes.create', 'uses' => 'Themes@create']);
+        Route::post('/', ['as' => 'backend.themes.store', 'uses' => 'Themes@store']);
+        Route::get('/{themes}', ['as' => 'backend.themes.show', 'uses' => 'Themes@show']);
+        Route::get('/{themes}/edit', ['as' => 'backend.themes.edit', 'uses' => 'Themes@edit']);
+        Route::put('/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
+        Route::patch('/{themes}', ['as' => 'backend.themes.update', 'uses' => 'Themes@update']);
+        Route::delete('/{themes}', ['as' => 'backend.themes.destroy', 'uses' => 'Themes@destroy']);
+    });
 
     // Dashboard Users
-    Route::get('/users', ['as' => 'backend.users.index', 'uses' => 'Users@index']);
-    Route::put('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
-    Route::patch('/users/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
-    Route::delete('/users/{users}', ['as' => 'backend.users.destroy', 'uses' => 'Users@destroy']);
+    Route::group(['prefix' => 'products'], function($router) {
+        Route::get('/', ['as' => 'backend.users.index', 'uses' => 'Users@index']);
+        Route::put('/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
+        Route::patch('/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
+        Route::delete('/{users}', ['as' => 'backend.users.destroy', 'uses' => 'Users@destroy']);
+    });
 });
 
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
@@ -63,3 +69,4 @@ Route::controllers([
 Route::get('home', function(){
 	return Redirect::to('backend');
 });
+
