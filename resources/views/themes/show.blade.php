@@ -38,8 +38,8 @@
           {{ $theme->headline }}
         </li>
         <h6>Sm-Headline:</h6>
-        <li class="list-group-item" style="font-family: '{{ $theme->smHeadline }}'">
-          {{ $theme->smHeadline }}
+        <li class="list-group-item" style="font-family: '{{ $theme->sm_headline }}'">
+          {{ $theme->sm_headline }}
         </li>
         <h6>Body:</h6>
         <li class="list-group-item" style="font-family: '{{ $theme->body }}'">
