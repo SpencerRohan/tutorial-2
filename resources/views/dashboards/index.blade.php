@@ -49,7 +49,7 @@
         <li class="list-group-item">
           ID: {{ $theme->id }}<br>
           Color: {{ $theme->color }}<br>
-          Headline: {{ $theme ->smHeadline }}
+          Headline: {{ $theme ->sm_headline }}
         </li>
       @endforeach
     </ul>

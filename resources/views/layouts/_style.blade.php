@@ -33,7 +33,7 @@ h1 {
 }
 
 h3 {
-  font-family: {{ $theme->smHeadline }};
+  font-family: {{ $theme->sm_headline }};
 }
 
 body {

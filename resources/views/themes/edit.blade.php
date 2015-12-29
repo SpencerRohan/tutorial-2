@@ -30,7 +30,7 @@
             </div>
              <div class="form-group">
                 <h6>{!! Form::label('Sm-Headline', 'Sm-Headline:') !!}</h6>
-                {!! Form::text('smHeadline',null,['class'=>'form-control']) !!}
+                {!! Form::text('sm_headline',null,['class'=>'form-control']) !!}
             </div>
              <div class="form-group">
                 <h6>{!! Form::label('Body', 'body:') !!}</h6>

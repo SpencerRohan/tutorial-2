@@ -27,7 +27,7 @@
           <td>{{ $theme->hex }}</td>
           <td>{{ $theme->color }}</td>
           <td>{{ $theme->headline }}</td>
-          <td>{{ $theme->smHeadline }}</td>
+          <td>{{ $theme->sm_headline }}</td>
           <td>{{ $theme->body }}</td>
           <td>
             @foreach ($theme->products as $product)
