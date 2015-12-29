@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Product;
-use App\Theme;
-use App\Vendor;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\ProductRepository;
+use App\Contracts\ProductContract;
 use App\Repositories\VendorRepository;
 
 class ProductLines extends Controller
@@ -17,7 +14,7 @@ class ProductLines extends Controller
 
     protected $product, $vendor;
 
-    public function __construct(ProductRepository $product, VendorRepository $vendor)
+    public function __construct(ProductContract $product, VendorRepository $vendor)
     {
         $this->product = $product;
         $this->vendor = $vendor;

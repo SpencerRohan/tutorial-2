@@ -2,8 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Vendor;
-
 class VendorRepository 
 {
 	protected $model;

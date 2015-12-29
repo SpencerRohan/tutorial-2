@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
             return preg_replace('/\@var(.+)/', '<?php ${1}; ?>', $value);
         });
 
-        $this->app->bind('App\Repositories\ProductRepository', function($app) {
+        $this->app->bind('App\Contracts\ProductContract', function($app) {
             return new ProductRepository(new Product); 
         });
 
