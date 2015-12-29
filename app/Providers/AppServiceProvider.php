@@ -4,6 +4,10 @@ namespace App\Providers;
 use Blade;
 
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\ProductRepository;
+use App\Repositories\VendorRepository;
+use App\Product;
+use App\Vendor;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +20,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::extend(function($value) {
             return preg_replace('/\@var(.+)/', '<?php ${1}; ?>', $value);
+        });
+
+        $this->app->bind('App\Repositories\ProductRepository', function($app) {
+            return new ProductRepository(new Product); 
+        });
+
+        $this->app->bind('App\Repositories\VendorRepository', function($app) {
+            return new VendorRepository(new Vendor); 
         });
 
     }

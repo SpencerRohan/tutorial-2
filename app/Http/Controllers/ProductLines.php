@@ -9,9 +9,20 @@ use App\Theme;
 use App\Vendor;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Repositories\ProductRepository;
+use App\Repositories\VendorRepository;
 
 class ProductLines extends Controller
 {
+
+    protected $product, $vendor;
+
+    public function __construct(ProductRepository $product, VendorRepository $vendor)
+    {
+        $this->product = $product;
+        $this->vendor = $vendor;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +30,9 @@ class ProductLines extends Controller
      */
     public function index($code = 'anvil')
     {
-        $product = Product::with('theme')->whereCode($code)->first();
+        $product = $this->product->getByCode($code, ['theme']);
         $theme   = $product->theme;
-        $vendors = setVendors();
+        $vendors = $this->vendor->getVendors();
         return view('productLines.index', compact('product', 'theme', 'vendors'));
     }
 

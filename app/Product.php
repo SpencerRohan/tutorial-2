@@ -12,15 +12,6 @@ class Product extends Model
       return $this->belongsTo('App\Theme');
     }
 
-    public static function setProductLine($code) {
-      $product = static::whereCode($code)->first();
-      return ($product) ? $product : static::find(1);
-    }
-
-    public function scopeCode($query, $code='anvil') {
-      $query->whereCode($type)->first();
-    }
-
     /**
      * The attributes that are mass assignable.
      *
