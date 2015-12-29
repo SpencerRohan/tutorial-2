@@ -15,6 +15,5 @@
   function setVendors() {
     return Vendor::all();
   }
-
-
+  
 ?>
