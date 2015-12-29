@@ -23,7 +23,7 @@
       <tbody>
       @foreach ($themes as $theme)
         <tr>
-          <td><a href="{{ route('backend.themes.show', [$product->theme_id]) }}">{{ $theme->id }}</a></td>
+          <td><a href="{{ route('backend.themes.show', [$theme->id]) }}">{{ $theme->id }}</a></td>
           <td>{{ $theme->hex }}</td>
           <td>{{ $theme->color }}</td>
           <td>{{ $theme->headline }}</td>

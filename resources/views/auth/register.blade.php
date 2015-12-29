@@ -9,7 +9,7 @@
       {!! csrf_field() !!}
 
     <div class="form-group">
-      <label for="email">Name</label>
+      <label for="name">Name</label>
       <input type="name" name="name" class="form-control" value="{{ old('name') }}" placeholder="Name">
     </div>
     <div class="form-group">

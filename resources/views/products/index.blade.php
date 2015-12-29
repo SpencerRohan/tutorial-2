@@ -20,7 +20,8 @@
       </thead>
       <tbody>
       @foreach ($products as $product)
-        <tr>{{ route('backend.products.edit', [$product->id]) }}">{{ $product->id }}</a></td>
+        <tr>
+          <td><a href="{{ route('backend.products.show', [$product->id]) }}">{{ $product->id }}</a></td>
           <td>{{ $product->name }}</td>
           <td>{{ $product->code }}</td>
           <td>{{ $product->layout }}</td>

@@ -29,7 +29,7 @@ Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\Ad
     });
 
     // Dashboard Themes
-    Route::group(['prefix' => 'products'], function($router) {
+    Route::group(['prefix' => 'themes'], function($router) {
         Route::get('/', ['as' => 'backend.themes.index', 'uses' => 'Themes@index']);
         Route::get('/create', ['as' => 'backend.themes.create', 'uses' => 'Themes@create']);
         Route::post('/', ['as' => 'backend.themes.store', 'uses' => 'Themes@store']);
@@ -41,8 +41,10 @@ Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\Ad
     });
 
     // Dashboard Users
-    Route::group(['prefix' => 'products'], function($router) {
+    Route::group(['prefix' => 'users'], function($router) {
         Route::get('/', ['as' => 'backend.users.index', 'uses' => 'Users@index']);
+        Route::get('/create', ['as' => 'backend.users.create', 'uses' => 'Users@create']);
+        Route::post('/', ['as' => 'backend.users.store', 'uses' => 'Users@store']);
         Route::put('/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
         Route::patch('/{users}', ['as' => 'backend.users.update', 'uses' => 'Users@update']);
         Route::delete('/{users}', ['as' => 'backend.users.destroy', 'uses' => 'Users@destroy']);

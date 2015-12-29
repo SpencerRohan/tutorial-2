@@ -6,7 +6,7 @@
 
 @section('dash_content')
 
-    {!! Form::open(['route'=>['backend.themes']) !!}
+    {!! Form::open(['route'=>['backend.themes.index']]) !!}
         
         <div class="col-sm-4">
             <div class="form-group">
@@ -18,7 +18,7 @@
                 {!! Form::text('color',null,['class'=>'form-control']) !!}
             </div>
             <h6>{!! Form::label('Product IDs', 'Utilizing Product IDs') !!}</h6>
-            <p>You may assign this theme in the <a href="{{ route('backend.products') }}">product dashboard</a>, once theme has been saved.</p>
+            <p>You may assign this theme in the <a href="{{ route('backend.products.index') }}">product dashboard</a>, once theme has been saved.</p>
 
 
         </div>

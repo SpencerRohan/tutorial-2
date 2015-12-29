@@ -11,7 +11,6 @@
     <table class="table table-condensed table-hover">
       <thead>
         <tr>
-
           <th>ID</th>
           <th>Name</th>
           <th>Email</th>
@@ -55,7 +54,7 @@
     </table>
     <div class='col-sm-12'>
       {!! $users->render() !!}<hr>
-      <a href="{{ route('backend.users.create' }}"><button class="btn btn-success">+ New User</button></a>
+      <a href="{{ route('backend.users.create') }}"><button class="btn btn-success">+ New User</button></a>
     </div>
   </div>
 @stop

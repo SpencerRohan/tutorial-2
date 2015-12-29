@@ -6,7 +6,7 @@
 
 @section('dash_content')
 
-    {!! Form::open(['route'=>['backend.products']) !!}
+    {!! Form::open(['route'=>['backend.products.index']]) !!}
         <div class="col-sm-4">
             <div class="form-group">
                 <h6>{!! Form::label('Name', 'Name:') !!}</h6>
