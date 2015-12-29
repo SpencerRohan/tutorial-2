@@ -38,6 +38,24 @@ from incompatible context
 Confident in coding scale 1-10, Phase 1 was about a 6-7. There is still a ton I'm not aware of, but the basic foundation and building blocks are very similar to Rails. Like Rails, Laravel has so much going on and customizable options, I feel it'll take me a bit to really master it. I do feel comfortable in doing the basic operations.
 
 
+#### Phase 2
+
+There were a lot of things that tested my brainwaves on this phase. One of the biggest issues I had was deleting routes but not the related database entry. I also created an ADMIN feature to the user authentication. My thought process was this could allow people to sign up for the site later in life, while keeping an administration side of things -- also gave me an excuse to play with middleware. Pagination is a great tool for laravel, really like how easy that is! There is a few things that I'm still working on - would like to validate some of the data coming in - and making sure the errors thrown are well explained. I tested errors out in a spot or two - could use some protips in validation - how to go about doing that. Overall I think I did well, I think with more practice a lot of the building process will be smoother.
+
+##### Questions and Topics:
+
++ Deleting routes - onDelete('SET NULL') - any other ways?
++ Validating data beyond database entry.
++ Index vs List - I think subconsciously I made my list views all index views(rails thing) - do index views exist in laravel?
++ Getting an Auth/login redirect if user data does not exist - I'm not sure where that's happening. Somewhere in the authenticationandregistration route - not sure where that is in my code base. Can I override?
++ Pulling a laravel project in from github. Is it just 'composer install', setting up the .env, and you are good to go?
++ Any portion of my code base look super clunky?
++ Commit messages - What are the general rules followed here?
++ Any laravel books worth picking up?
+
+Confident in coding scale 1-10, Phase 1 was a solid 7. The basics are there for me, what I should be looking for and how things connect. Still working to really streamline the coding process. We talked Wednesday about a lot of new concepts. Any reading materials you would suggest?
+
+
 
 
 
