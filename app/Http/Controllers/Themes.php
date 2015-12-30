@@ -43,31 +43,28 @@ class Themes extends Controller
     public function store(CreateThemeRequest $request)
     {
         $theme = Theme::create($request->all());
-        $id = $theme->id;
-        return redirect()->route('backend.themes.show', compact('id'));
+        return redirect()->route('backend.themes.show', compact('theme'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Theme $theme
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Theme $theme)
     {
-        $theme = Theme::findOrFail($id);
         return view('themes.show', compact('theme'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Theme $theme
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Theme $theme)
     {
-        $theme = Theme::findOrFail($id);
         return view('themes.edit', compact('theme'));
     }
 
@@ -75,26 +72,24 @@ class Themes extends Controller
      * Update the specified resource in storage.
      *
      * @param  CreateThemeRequest  $request
-     * @param  int  $id
+     * @param  Theme $theme
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateThemeRequest $request, $id)
+    public function update(CreateThemeRequest $request, Theme $theme)
     {
-        $themetUpdate = $request->all();
-        $theme = Theme::find($id);
-        $theme->update($themetUpdate);
-        return redirect()->route('backend.themes.show', compact('id'));
+        $theme->update($request->all());
+        return redirect()->route('backend.themes.show', compact('theme'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Theme $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Theme $theme)
     {
-        Theme::findOrFail($id)->delete();
+        $theme->delete();
         return redirect()->route('backend.themes.index');
     }
 }

@@ -6,7 +6,7 @@
 
 @section('dash_content')
 
-    {!! Form::model($theme,['method' => 'PATCH','route'=>['backend.themes.update',$theme->id]]) !!}
+    {!! Form::model($theme,['method' => 'PATCH','route'=>['backend.themes.update',$theme]]) !!}
         
         <div class="col-sm-4">
             <div class="form-group">

@@ -62,15 +62,13 @@ class Users extends Controller
      * Update the specified resource in storage.
      *
      * @param  UpdateUserRequest  $request
-     * @param  int  $id
+     * @param  User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, $id)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        $userUpdate = $request->all();
-        $user = User::find($id);
-        $user->update($userUpdate);
-        return redirect()->route('backend.users.index', compact('id'));
+        $user->update($request->all());
+        return redirect()->route('backend.users.index', compact('user'));
     }
 
     /**
@@ -79,9 +77,9 @@ class Users extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        User::findOrFail($id)->delete();
+        $user->delete();
         return redirect()->route('backend.users.index');
     }
 }

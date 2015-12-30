@@ -8,6 +8,7 @@ use App\Product;
 use App\Theme;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 
 class Products extends Controller
@@ -47,19 +48,17 @@ class Products extends Controller
     public function store(CreateProductRequest $request)
     {
         $product = Product::create($request->all());
-        $id = $product->id;
-        return redirect()->route('backend.products.show', compact('id'));
+        return redirect()->route('backend.products.show', compact('product'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Product $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        $product = Product::findOrFail($id);
         return view('products.show', compact('product'));
 
     }
@@ -67,13 +66,12 @@ class Products extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Product $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
         
-        $product = Product::findOrFail($id);
         $themes = Theme::all();
         $themeIds = [];
         foreach ($themes as $theme):
@@ -85,27 +83,25 @@ class Products extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  CreateProductRequest  $request
-     * @param  int  $id
+     * @param  UpdateProductRequest  $request
+     * @param  Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateProductRequest $request, $id)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        $productUpdate = $request->all();
-        $product = Product::find($id);
-        $product->update($productUpdate);
-        return redirect()->route('backend.products.show', compact('id'));
+        $product->update($request->all());
+        return redirect()->route('backend.products.show', compact('product'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        Product::findOrFail($id)->delete();
+        $product->delete();
         return redirect()->route('backend.products.index');
     }
 

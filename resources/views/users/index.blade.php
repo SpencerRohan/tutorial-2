@@ -32,19 +32,19 @@
           </td>
           <td>
           @if ($user->is_admin)
-            {!! Form::open(['method' => 'PUT', 'route'=>['backend.users.update', $user->id]]) !!}
+            {!! Form::open(['method' => 'PUT', 'route'=>['backend.users.update', $user]]) !!}
               {!! Form::hidden('is_admin', 0) !!}
               {!! Form::submit('REMOVE ADMIN STATUS', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
           @else 
-            {!! Form::open(['method' => 'PUT', 'route'=>['backend.users.update', $user->id]]) !!}
+            {!! Form::open(['method' => 'PUT', 'route'=>['backend.users.update', $user]]) !!}
               {!! Form::hidden('is_admin', 1) !!}
               {!! Form::submit('MAKE ADMIN', ['class' => 'btn btn-success']) !!}
             {!! Form::close() !!}
          @endif
         </td>
           <td>
-            {!! Form::open(['method' => 'DELETE', 'route'=>['backend.users.destroy', $user->id]]) !!}
+            {!! Form::open(['method' => 'DELETE', 'route'=>['backend.users.destroy', $user]]) !!}
               {!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
           </td>

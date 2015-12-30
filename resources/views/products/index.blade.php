@@ -21,7 +21,7 @@
       <tbody>
       @foreach ($products as $product)
         <tr>
-          <td><a href="{{ route('backend.products.show', [$product->id]) }}">{{ $product->id }}</a></td>
+          <td><a href="{{ route('backend.products.show', [$product]) }}">{{ $product->id }}</a></td>
           <td>{{ $product->name }}</td>
           <td>{{ $product->code }}</td>
           <td>{{ $product->layout }}</td>

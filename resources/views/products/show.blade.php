@@ -53,8 +53,8 @@
     </ul>
     
     <a href="/coyote-reboot/{{ $product->code }}"><button class="btn btn-info">View Product</button></a>
-    <a href="{{ route('backend.products.edit', [$product->id]) }}"><button class="btn btn-success">EDIT</button></a>
-    {!! Form::open(['method' => 'DELETE', 'route'=>['backend.products.destroy', $product->id]]) !!}
+    <a href="{{ route('backend.products.edit', [$product]) }}"><button class="btn btn-success">EDIT</button></a>
+    {!! Form::open(['method' => 'DELETE', 'route'=>['backend.products.destroy', $product]]) !!}
       <br>{!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 </div>
