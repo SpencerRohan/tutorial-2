@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Theme;
 use App\User;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -53,7 +52,7 @@ class Users extends Controller
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'is_admin' => $request['is_admin'],
+            'is_admin' => $request['is_admin'] || 0,
             'password' => bcrypt($request['password']),
         ]);
         return redirect()->route('backend.users.index');

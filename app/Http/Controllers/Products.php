@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Product;
 use App\Theme;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
 
