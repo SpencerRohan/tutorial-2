@@ -55,6 +55,8 @@ class Users extends Controller
             'is_admin' => $request['is_admin'] || 0,
             'password' => bcrypt($request['password']),
         ]);
+        session()->flash('flash_message', "PUNY HUMAN - Your User has been created!");
+
         return redirect()->route('backend.users.index');
     }
 
@@ -68,6 +70,8 @@ class Users extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->all());
+        session()->flash('flash_message', "PUNY HUMAN - Your User has been updated!");
+
         return redirect()->route('backend.users.index', compact('user'));
     }
 
@@ -80,6 +84,8 @@ class Users extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        session()->flash('flash_message', "PUNY HUMAN - You DESTROYED your User!");
+
         return redirect()->route('backend.users.index');
     }
 }

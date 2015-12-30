@@ -48,6 +48,7 @@ class Products extends Controller
     public function store(CreateProductRequest $request)
     {
         $product = Product::create($request->all());
+        session()->flash('flash_message', "PUNY HUMAN - Your Product has been created!");
         return redirect()->route('backend.products.show', compact('product'));
     }
 
@@ -90,6 +91,7 @@ class Products extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         $product->update($request->all());
+        session()->flash('flash_message', "PUNY HUMAN - Your Product has been updated!");
         return redirect()->route('backend.products.show', compact('product'));
     }
 
@@ -102,6 +104,7 @@ class Products extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        session()->flash('flash_message', "PUNY HUMAN - You destroyed your Product!");
         return redirect()->route('backend.products.index');
     }
 

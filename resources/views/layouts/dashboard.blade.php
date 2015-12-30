@@ -37,18 +37,11 @@
         <div class= 'container spotlight article'>
           <div class ="row spotlight__row article__row">
 
-            @if (count($errors))
-              <div class="alert alert-danger">
-                <ul>
-                  @foreach($errors->all() as $error)
-                    <li>{!! $error !!}</li>
-                  @endforeach
-                </ul>
-              </div>
-            @endif
-            
-            @if (Auth::user()->is_admin)
+            @include('layouts/_errors')
+            @include('layouts/_flash')
 
+
+            @if (Auth::user()->is_admin)
               
               @yield('dash_content')
 
@@ -68,6 +61,9 @@
 
 
       
-    <script src="../assets/js/site.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/site.js') }}" type="text/javascript"></script>
+    <script>
+      $('div.flash').delay(3000).slideUp(1000)
+    </script>
   </body>
 </html>

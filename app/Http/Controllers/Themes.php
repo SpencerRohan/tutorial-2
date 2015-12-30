@@ -43,6 +43,7 @@ class Themes extends Controller
     public function store(CreateThemeRequest $request)
     {
         $theme = Theme::create($request->all());
+        session()->flash('flash_message', "PUNY HUMAN - Your Theme has been created!");
         return redirect()->route('backend.themes.show', compact('theme'));
     }
 
@@ -78,6 +79,7 @@ class Themes extends Controller
     public function update(CreateThemeRequest $request, Theme $theme)
     {
         $theme->update($request->all());
+        session()->flash('flash_message', "PUNY HUMAN - Your Theme has been updated!");
         return redirect()->route('backend.themes.show', compact('theme'));
     }
 
@@ -90,6 +92,7 @@ class Themes extends Controller
     public function destroy(Theme $theme)
     {
         $theme->delete();
+        session()->flash('flash_message', "PUNY HUMAN - Your Destroyed your theme!");
         return redirect()->route('backend.themes.index');
     }
 }

@@ -6,7 +6,7 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/site.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/site.css') }}">
   </head>
 
   <body>
@@ -24,15 +24,8 @@
     <div class= 'container article'>
       <div class ="row article__row">
        
-        @if (count($errors))
-          <div class="alert alert-danger">
-            <ul>
-              @foreach($errors->all() as $error)
-                <li>{!! $error !!}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
+        @include('layouts._errors')
+        @include('layouts._flash')
 
         @yield('form')
 
@@ -47,6 +40,6 @@
       </div>
     </footer>
 
-    <script src="../assets/js/site.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/site.js') }}" type="text/javascript"></script>
   </body>
 </html>
