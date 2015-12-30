@@ -36,7 +36,9 @@
       <div class="container">
         <a href="#" alt="HOME">Home</a> |
         <a href="#" alt= "Privacy Policy">Privacy Policy</a> |
-        <a href="#" alt="Contact">Contact Us</a>
+        <a href="#" alt="Contact">Contact Us</a> |
+        <a href="{{ route('backend.login') }}" alt="Login">Login</a> |
+        <a href="{{ route('backend.register') }}" alt="Register">Register</a>
       </div>
     </footer>
 

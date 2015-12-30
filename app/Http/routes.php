@@ -52,7 +52,7 @@ Route::group(array('prefix'=> 'backend', 'middleware' => 'App\Http\Middleware\Ad
 });
 
 Route::group(array('prefix'=> 'backend', 'before' => 'csrf'), function(){
-	Route::get('/', "Dashboards@index");
+	Route::get('/', ['as' => 'backend', 'uses' => 'Dashboards@index']);
 
 	// Authentication routes...
 	Route::get('login', ['as' => 'backend.login', 'uses' => 'Auth\AuthController@getLogin']);

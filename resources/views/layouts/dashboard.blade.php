@@ -24,10 +24,10 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Home</a></li>
-            <li><a href="/backend/users">Users</a></li>
-            <li><a href="/backend/products">Products</a></li>
-            <li><a href="/backend/themes">Themes</a></li>
-            <li><a href="/backend/logout">Logout</a></li>
+            <li><a href="{{ route('backend.users.index') }}">Users</a></li>
+            <li><a href="{{ route('backend.products.index') }}">Products</a></li>
+            <li><a href="{{ route('backend.themes.index') }}">Themes</a></li>
+            <li><a href="{{ route('backend.logout') }}" alt="logout">Logout</a></li>
           </ul>
         </div>
       </div>
@@ -47,9 +47,9 @@
 
               <div class='col-sm-12'>
                 <hr>
-                <a href="/backend/users"><button class="btn btn-primary btn-brand">USERS</button></a>
-                <a href="/backend/products"><button class="btn btn-primary btn-brand">PRODUCTS</button></a>
-                <a href="/backend/themes"><button class="btn btn-primary btn-brand">THEMES</button></a>
+                <a href="{{ route('backend.users.index') }}"><button class="btn btn-primary btn-brand">USERS</button></a>
+                <a href="{{ route('backend.products.index') }}"><button class="btn btn-primary btn-brand">PRODUCTS</button></a>
+                <a href="{{ route('backend.themes.index') }}"><button class="btn btn-primary btn-brand">THEMES</button></a>
               </div>
             @else
               <p> You are not an authorized Administrator of this site </p>

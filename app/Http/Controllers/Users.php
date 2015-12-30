@@ -64,7 +64,7 @@ class Users extends Controller
      * Update the specified resource in storage.
      *
      * @param  UpdateUserRequest  $request
-     * @param  User $user
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, User $user)
@@ -72,13 +72,13 @@ class Users extends Controller
         $user->update($request->all());
         session()->flash('flash_message', "PUNY HUMAN - Your User has been updated!");
 
-        return redirect()->route('backend.users.index', compact('user'));
+        return redirect()->route('backend.users.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)

@@ -17,7 +17,15 @@
       <div class="container">
         <a href="#" alt="HOME">Home</a> |
         <a href="#" alt= "Privacy Policy">Privacy Policy</a> |
-        <a href="#" alt="Contact">Contact Us</a>
+        <a href="#" alt="Contact">Contact Us</a> |
+        @if (Auth::check())
+        <a href="{{ route('backend') }}" alt="dashboard">Dashboard</a> |
+          <a href="{{ route('backend.logout') }}" alt="logout">Logout</a>
+        @else
+          <a href="{{ route('backend.login') }}" alt="Login">Login</a> |
+          <a href="{{ route('backend.register') }}" alt="Register">Register</a>
+
+        @endif
       </div>
     </footer>
 

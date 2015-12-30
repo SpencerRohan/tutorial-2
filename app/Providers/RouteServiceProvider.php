@@ -30,7 +30,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->model('products', 'App\Product');
         $router->model('themes', 'App\Theme');
-        $router->model('Users', 'App\User');
+        $router->model('users', 'App\User');
     }
 
     /**
