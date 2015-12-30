@@ -8,6 +8,9 @@ use App\Product;
 use App\Theme;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateThemeRequest;
+
+
 class Themes extends Controller
 {
     /**
@@ -35,10 +38,10 @@ class Themes extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CreateThemeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateThemeRequest $request)
     {
         $theme = Theme::create($request->all());
         $id = $theme->id;
@@ -72,11 +75,11 @@ class Themes extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CreateThemeRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateThemeRequest $request, $id)
     {
         $themetUpdate = $request->all();
         $theme = Theme::find($id);

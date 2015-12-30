@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateUserRequest extends Request
+class CreateThemeRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class CreateUserRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
-            'is_admin' => 'boolean',
+            'hex' => 'required|string|max:32',
+            'color' => 'required|string|max:32',
+            'headline' => 'required|string|max:32',
+            'sm_headline' => 'required|string|max:32',
+            'body' => 'required|string|max:32',
         ];
     }
 }

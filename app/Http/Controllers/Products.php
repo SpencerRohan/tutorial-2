@@ -8,6 +8,7 @@ use App\Product;
 use App\Theme;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateProductRequest;
 
 
 class Products extends Controller
@@ -41,10 +42,10 @@ class Products extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CreateProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         $product = Product::create($request->all());
         $id = $product->id;
@@ -85,11 +86,11 @@ class Products extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CreateProductRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateProductRequest $request, $id)
     {
         $productUpdate = $request->all();
         $product = Product::find($id);

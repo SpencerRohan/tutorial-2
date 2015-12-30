@@ -10,6 +10,8 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+
 
 class Users extends Controller
 {
@@ -43,7 +45,7 @@ class Users extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CreateUserRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(CreateUserRequest $request)
@@ -60,11 +62,11 @@ class Users extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateUserRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
         $userUpdate = $request->all();
         $user = User::find($id);
