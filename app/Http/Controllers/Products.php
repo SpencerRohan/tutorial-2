@@ -31,11 +31,7 @@ class Products extends Controller
      */
     public function create()
     {
-        $themes = Theme::all();
-        $themeIds = [];
-        foreach ($themes as $theme):
-            $themeIds[$theme->id] = $theme->id;
-        endforeach;
+        $themeIds = Theme::lists('color', 'id')->all();
         return view('products.create', compact('themeIds'));
     }
 
@@ -73,11 +69,7 @@ class Products extends Controller
     public function edit(Product $product)
     {
         
-        $themes = Theme::all();
-        $themeIds = [];
-        foreach ($themes as $theme):
-            $themeIds[$theme->id] = $theme->id;
-        endforeach;
+        $themeIds = Theme::lists('color', 'id')->all();
         return view('products.edit', compact('product', 'themeIds'));
     }
 
