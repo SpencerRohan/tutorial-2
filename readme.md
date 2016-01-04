@@ -68,6 +68,7 @@ Implemented changes discussed through Slack. I have a few remaining questions th
 + Changing fundamental routing within config files - when should this be done, when should it not be done. Can you override?
 + Creating flash_messages - should this be handled within controller classes? Alternative methods?
 + What typically goes in 'jobs', 'policies', 'listeners', 'events', 'console/commands' and 'storage' files?
++FlashContract not working - cannot make an instance of. Why?
 
 Confident in coding scale 1-10, N/A. This portion was more of a sandbox phase - felt great. I was able to play with some deeper concepts in laravel, which dramatically helped my understanding of abstracts and interfaces. Also touched on validation, service providers, and middleware.
 
