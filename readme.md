@@ -56,6 +56,17 @@ There were a lot of things that tested my brainwaves on this phase. One of the b
 Confident in coding scale 1-10, Phase 1 was a solid 7. The basics are there for me, what I should be looking for and how things connect. Still working to really streamline the coding process. We talked Wednesday about a lot of new concepts. Any reading materials you would suggest?
 
 
+#### Phase 3 - The Clean Up
+
+Implemented changes discussed through Slack. I have a few remaining questions that would be best resolved in person. Couldn't figure out how to make a drop down that had 'ID - COLOR' properties. I could get one, but not the other. I started exploring flash messaging, validations with Requests, and RouteServiceProvider properties. I also made an additional interface - for Vendor class. I discovered vendor routing within laravel - I adjusted this to no longer route to auth/login or /home. 
+
+
+##### Questions and Topics:
+
++ 
+
+Confident in coding scale 1-10, N/A
+
 
 
 
